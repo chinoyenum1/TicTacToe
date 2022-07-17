@@ -1,0 +1,117 @@
+:root{
+    --lime-050: #F9FBE7;
+    --lime-100: #F0F4C3;
+    --lime-200: #E6EE9C;
+    --lime-300: #DCE775;
+    --lime-400: #D4E157;
+    --lime-500: #CDDC39;
+    --lime-600: #C0CA33;
+    --lime-700: #AFB42B;
+    --lime-800: #9E9D24;
+    --lime-900: #827717;
+
+    --lime-A100: #F4FF81;
+    --lime-A200: #EEFF41;
+    --lime-A400: #C4FF00;
+    --lime-A700: #AEEA00;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background-image: linear-gradient(236deg, var(--lime-300), var(--lime-200));
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.container{
+    border: 8px solid var(--lime-900);
+    background-color: var(--lime-200);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header{
+    font-size: 3rem;
+    width: 100%;
+    background-color: var(--lime-800);
+    color: var(--lime-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    background-color: var(--lime-100);
+    width: 100%;
+    height: 1.5rem;
+    max-height: 2rem; 
+    margin: 0%;
+    /* padding: 5px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    
+}
+
+.info > p{
+    margin: 0 15%;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #33691e;
+    animation: run 5s ease-in 1.5s infinite alternate ;
+}
+
+@keyframes run{
+    from{
+        transform: translateX(15%);
+    }
+    to{
+        transform: translateX(60%);
+
+    }
+}
+
+.board{
+    border: 2px solid var(--lime-800);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(4rem, 1fr));
+    grid-template-rows: repeat(3, minmax(4rem, 1fr));
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid var(--lime-800);
+    background-color: var(--lime-300);
+    color: var(--lime-700);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.btn{
+    background-color: var(--lime-900);
+    color: var(--lime-200);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 100vh;
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+}
