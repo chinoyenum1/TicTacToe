@@ -93,7 +93,7 @@ header{
 }
 
 .board{
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     border: 2px solid var(--lime-800);
     display: grid;
     grid-template-columns: repeat(3, minmax(4rem, 1fr));

@@ -1,4 +1,5 @@
-const Player = (name, sign) => {
+(() => {
+  const Player = (name, sign) => {
     const getName = () => {
       return name;
     };
@@ -98,26 +99,58 @@ const GameDisplay = (function () {
 
 const GameController = (() => { 
     const startGame = document.querySelector(".start");
-  
-    startGame.addEventListener("click", () => {
-        GameDisplay.setResultMessage(`${getCurrentPlayerName()}'s turn to play`);
-        startGame.style.display = "none";
-        isOver = false;
-        resetBoard();
-        GameBoard.resetBoard();
-        GameDisplay.updateGameboard();
-    }); 
+    const form = document.querySelector("form");
+    const modal = document.querySelector(".modal");
+
+    let player1, player2, p1, p2, s1, s2;
     
-    const player1 = Player("Benaiah", "X")
-    const player2 = Player("Temitope", "O")
+
+
+    const init = () => {
+      startGame.addEventListener('click',()=>{
+        modal.showModal();
+      })
+
+      form.addEventListener('submit', gameStartup);
+
+    }
+
+    function gameStartup(){
+      p1 = document.querySelector(`input[name='name1']`).value;
+      p2 = document.querySelector(`input[name='name2']`).value;
+      s1 = document.querySelector(`#signs-1`).value;
+      s2 = document.querySelector(`#signs-2`).value;
+
+      player1 = Player(p1, s1);
+      player2 = Player(p2, s2);
+
+      GameDisplay.setResultMessage(`${getCurrentPlayerName()}'s turn to play`);
+      startGame.style.display = "none";
+      isOver = false;
+      resetGame();
+      GameBoard.resetBoard();
+      GameDisplay.updateGameboard();
+    }
+  
+    // startGame.addEventListener("click", () => {
+    //     GameDisplay.setResultMessage(`${getCurrentPlayerName()}'s turn to play`);
+    //     startGame.style.display = "none";
+    //     isOver = false;
+    //     resetGame();
+    //     GameBoard.resetBoard();
+    //     GameDisplay.updateGameboard();
+    // }); 
+    
+    // const player1 = Player("Benaiah", "X")
+    // const player2 = Player("Temitope", "O")
   
     let turn = 1;
     let isOver = true;
 
     const playTurn = (index) => {
-      const currentPlayerSign = getCurrentPlayerSign();
+      // const currentPlayerSign = getCurrentPlayerSign();
     //   const currentPlayerName = getCurrentPlayerName();
-      GameBoard.setSign(currentPlayerSign, index);
+      GameBoard.setSign(getCurrentPlayerSign(), index);
       if(checkWinner(index)){
       GameDisplay.setResultMessage(`${getCurrentPlayerName()} has won the Game`);
         isOver = true;
@@ -175,12 +208,14 @@ const GameController = (() => {
         return isOver;
     }
 
-    const resetBoard = () => {
+    const resetGame = () => {
         turn = 1;
         isOver = false;
     }
 
-    return { playTurn, getCurrentPlayerSign, getCurrentPlayerName, getIsOver };
+    return { playTurn, getCurrentPlayerSign, getCurrentPlayerName, getIsOver, init };
 })()
 
+GameController.init();
 
+})()
