@@ -109,9 +109,14 @@ header{
     border: 2px solid var(--lime-800);
     background-color: var(--lime-300);
     color: var(--lime-900);
-    font-size: 1rem;
+    font-size: 0.2rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+.player-img{
+    width: 2rem;
+    height: 2rem;
 }
 
 .btn{
@@ -216,4 +221,63 @@ input[type='submit']{
     background-color: var(--lime-900);
     border-radius: 30px;
     padding: 5px 10px;
+}
+
+.modal-1{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lime-900);
+    opacity: 0.5;
+}
+
+.splash{
+    background-color: white;
+    color: var(--lime-900);
+    width: 100%;
+    padding: 5px;
+}
+
+.win-draw{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 3px 3px 3px var(--lime-A700);
+}
+
+.modal-1 > main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-1 > main > button{
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(255, 255, 255);
+    color: var(--lime-900);
+    
+
+}
+
+.modal-1 > main > button:hover{
+    color: rgb(255, 255, 255);
+    background-color: var(--lime-900);
+    border: 2px solid white;
 }

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,8 +36,8 @@
                     <div class="sign">
                         <label for="signs">Sign</label>
                         <select id="signs-1" name="signs">
-                            <option value="X">Cross</option>
-                            <option value="O">Circle</option>
+                            <option value="cross.gif">Cross</option>
+                            <option value="monkey-1.png">Monkey1</option>
                           </select>
                     </div>
                 </fieldset>
@@ -51,8 +50,8 @@
                     <div class="sign">
                         <label for="signs">Sign</label>
                         <select id="signs-2" name="signs">
-                            <option value="O">Circle</option>
-                            <option value="X">Cross</option>
+                            <option value="circle.gif">Circle</option>
+                            <option value="monkey-2.png">Monkey2</option>
                           </select>
                     </div>
                 </fieldset>
@@ -60,6 +59,15 @@
             <input type="submit" id="submit" value="Begin Game">
         </form>
     </dialog>
+    <div class="modal-1" id="modal-1">
+        <main>
+            <div class="splash">
+                <p class="win-draw">Congratulations This is the winner</p>
+            </div>
+            <button type="submit" id="restart">Restart</button>
+        </main>
+
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
